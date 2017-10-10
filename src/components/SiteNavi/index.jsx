@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-class SiteNavi extends React.Component {
+export default class SiteNavi extends React.Component {
   render() {
     const { location, title } = this.props
     return (
@@ -16,5 +16,3 @@ class SiteNavi extends React.Component {
     )
   }
 }
-
-export default SiteNavi

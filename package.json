@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-bootstrap",
-  "description": "Simple starter for Gatsby",
-  "version": "1.9.36",
-  "author": "Futoshi Iwashita <jaxx2104@gmail.com>",
+  "name": "waffleni",
+  "description": "Our Website",
+  "version": "1.0.0",
+  "author": "Waffle Studio",
   "dependencies": {
     "gatsby": "^1.9.36",
     "gatsby-link": "^1.6.16",
