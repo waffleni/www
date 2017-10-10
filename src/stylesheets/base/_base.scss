@@ -7,6 +7,7 @@
  */
 html {
   box-sizing: border-box;
+  font-size: $text-font-size;
 }
 
 /**
@@ -32,4 +33,9 @@ a {
     color: $text-color;
     text-decoration: underline;
   }
+}
+
+.main {
+  margin-top: $navbar-height;
+  height: calc(100vh - #{$navbar-height});
 }
