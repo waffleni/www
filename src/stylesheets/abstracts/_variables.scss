@@ -4,7 +4,7 @@
 
 /// Base Font Size
 /// @type Length
-$text-font-size: 14px;
+$text-font-size: 16px;
 
 /// Regular font family
 /// @type List
@@ -16,13 +16,15 @@ $text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue',
 $code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
   'Monaco', monospace !default;
 
+$titles-font-stack: 'Montserrat', 'Helvetica', sans-serif !default;
+
 /// Copy text color
 /// @type Color
 $text-color: rgb(34, 34, 34) !default;
 
 /// Main brand color
 /// @type Color
-$brand-color: rgb(229, 0, 80) !default;
+$brand-color: rgb(253, 245, 117) !default;
 
 /// Light grey
 /// @type Color
@@ -48,7 +50,7 @@ $alabaster: #fafafa;
 /// @type String
 /// @example scss - When using a CDN
 ///   $base-url: 'http://cdn.example.com/assets/';
-$base-url: '/assets/' !default;
+$base-url: '../../static/' !default;
 
 /// Header Navbar height size
 /// @type Length

@@ -26,7 +26,7 @@ html {
  * Basic styles for links
  */
 a {
-  color: $brand-color;
+  color: $dark-grey;
   text-decoration: none;
 
   @include on-event {
@@ -37,5 +37,5 @@ a {
 
 .main {
   margin-top: $navbar-height;
-  height: calc(100vh - #{$navbar-height});
+  min-height: calc(100vh - #{$navbar-height});
 }

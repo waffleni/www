@@ -16,4 +16,16 @@ h4,
 h5,
 h6 {
   @extend .font-weight-bold;
+  font-family: $titles-font-stack;
+}
+
+.text-underlined {
+  border-bottom: 2px $brand-color solid;
+  padding-bottom: 3px;
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none;
+  }
 }

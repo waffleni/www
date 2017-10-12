@@ -2,6 +2,40 @@
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
 
-.main {
-  background-color: purple;
+.section--intro {
+  position: relative;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  &:before {
+    @include overlay-mixin();
+    background: linear-gradient(
+        rgba(206, 253, 250, 0.9),
+        rgba(206, 253, 250, 0.9)
+      ),
+      url('#{$base-url}img/intro_section_bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include media-breakpoint-up(md) {
+      left: 15vw;
+    }
+  }
+  &__title {
+    font-size: 3.2rem;
+    word-spacing: 100vw;
+    border-left: 4px $brand-color solid;
+  }
+
+  &__col-left {
+    margin-bottom: 3rem;
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: 8rem;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
 }
