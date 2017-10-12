@@ -36,15 +36,12 @@ export default class SiteNavi extends React.Component {
   }
 }
 
-class NavLink extends React.Component {
-  render() {
-    const { location, title, linkTo } = this.props
-    let active = location.pathname === linkTo ? ' active' : ''
+const NavLink = ({ location, title, linkTo }) => {
+  let active = location.pathname === linkTo ? ' active' : ''
 
-    return (
-      <li className={'nav-item nav-link' + active}>
-        <Link to={linkTo}>{title}</Link>
-      </li>
-    )
-  }
+  return (
+    <li className={'nav-item nav-link' + active}>
+      <Link to={linkTo}>{title}</Link>
+    </li>
+  )
 }
