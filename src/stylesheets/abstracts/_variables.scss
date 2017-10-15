@@ -44,7 +44,15 @@ $max-width: 1180px !default;
 
 /// Colors declarations
 /// @type Color
-$alabaster: #fafafa;
+$alabaster: rgb(250, 250, 250);
+
+$light-sky-blue: rgb(144, 211, 247);
+
+$pale-green: rgb(145, 255, 172);
+
+$pale-magenta: rgb(255, 140, 227);
+
+$purple: rgb(135, 111, 239);
 
 /// Relative or absolute URL where all assets are served from
 /// @type String

@@ -20,12 +20,22 @@ h6 {
 }
 
 .text-underlined {
-  border-bottom: 2px $brand-color solid;
+  border-bottom: 3px $brand-color solid;
   padding-bottom: 3px;
 
   &:hover,
   &:active,
   &:focus {
     text-decoration: none;
+  }
+
+  &--blue {
+    border-bottom-color: $light-sky-blue;
+  }
+  &--green {
+    border-bottom-color: $pale-green;
+  }
+  &--pink {
+    border-bottom-color: $pale-magenta;
   }
 }
