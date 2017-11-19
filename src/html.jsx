@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import * as PropTypes from 'prop-types'
 
+import Helmet from 'react-helmet'
+
 let stylesStr
 if (process.env.NODE_ENV === `production`) {
   try {
@@ -29,22 +31,28 @@ class Html extends Component {
     }
 
     return (
-      <html op="news" lang="en">
+      <html lang="en">
         <head>
-          {this.props.headComponents}
-
-          <meta name="referrer" content="origin" />
-          <meta charSet="utf-8" />
-          <meta
-            name="description"
-            content="Gatsby example site demoing sass plugin"
+          <Helmet
+            title="Waffle Studio"
+            meta={[
+              {
+                name: 'description',
+                content:
+                  'A friendly and experienced team of entrepreneurs, marketers, designers and software engineers that work together to create engaging digital products for your users.',
+              },
+              { name: 'keywords', content: 'app, agency' },
+            ]}
           />
+          {this.props.headComponents}
+          <meta name="referrer" content="origin" />
+
+          <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
-          <title>Using gatsby-plugin-sass</title>
           {css}
         </head>
         <body>

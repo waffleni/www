@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Waffle Studio",
   "dependencies": {
+    "ganalytics": "^2.0.1",
     "gatsby": "^1.9.36",
     "gatsby-link": "^1.6.16",
     "gatsby-plugin-google-analytics": "^1.0.7",
@@ -82,7 +83,7 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "deploy": "gatsby build --prefix-paths && netlify deploy public",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.+(js|jsx|json|css|scss)\"",
     "lint": "eslint --ext .js,.jsx --ignore-pattern public .",

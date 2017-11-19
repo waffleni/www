@@ -2,6 +2,11 @@ import React from 'react'
 
 import Link from 'gatsby-link'
 
+import GAnalytics from 'ganalytics'
+import * as God from '../../.secrets.json'
+const ga = new GAnalytics(God.ga, { aid: 1 })
+ga.send('pageview')
+
 import SiteNavi from '../components/SiteNavi'
 import SiteCard from '../components/SiteCard'
 import SiteFooter from '../components/SiteFooter'
@@ -18,16 +23,14 @@ export default class Index extends React.Component {
             <div className="container">
               <div className="row">
                 <div className="col-12 col-md-6 d-block d-md-flex section--intro__col-left">
-                  <h1 className="section--intro__title pl-4 text-uppercase">
+                  <h1 className="section--intro__title pl-4 text-uppercase typewriter">
                     Modern Web Desing
                   </h1>
                 </div>
                 <div className="col-12 col-md-6 d-block d-md-flex">
                   <div className="call-to-action bg-alabaster mt-auto px-4 py-5">
-                    <p className="h5 mb-4">
-                      Aenean lacinia bibendum nulla sed consectetur.
-                    </p>
-                    <Link to="/" className="text-underlined">
+                    <p className="h5 mb-4">We design and develop your ideas.</p>
+                    <Link to="#waffleni-portfolio" className="text-underlined">
                       See Our Portfolio
                     </Link>
                   </div>
@@ -37,17 +40,17 @@ export default class Index extends React.Component {
           </section>
           <section className="section section--heading">
             <div className="container text-center">
-              <h2 className="text-uppercase mb-3 mb-md-5">Heading</h2>
+              <h2 className="text-uppercase mb-3 mb-md-5">Who we are</h2>
               <p className="w-75 mx-auto mb-3 mb-md-5">
-                Aenean eu leo quam. Pellentesque ornare sem lacinia quam
-                venenatis vestibulum. Nullam quis risus eget urna mollis ornare
-                vel eu leo.
+                A friendly and experienced team of entrepreneurs, marketers,
+                designers and software engineers that work together to create
+                engaging digital products for your <strong>users</strong>.
               </p>
               <Link
                 to="/"
                 className="text-underlined text-underlined--blue text-uppercase"
               >
-                Read More
+                Meet The Team
               </Link>
             </div>
           </section>
@@ -103,7 +106,10 @@ export default class Index extends React.Component {
               </Link>
             </div>
           </section>
-          <section className="section section--portfolio">
+          <section
+            className="section section--portfolio"
+            id="waffleni-portfolio"
+          >
             <div className="container">
               <div className="row">
                 <div className="col-12 col-md-6 mb-5 mb-md-0">
@@ -136,10 +142,12 @@ export default class Index extends React.Component {
             <div className="container text-center">
               <h2 className="text-uppercase mb-3 mb-md-5">Work with us</h2>
               <p className="mb-3 mb-md-5">
-                Aenean eu leo quam. Parturient Purus Fusce
+                Are you about to launch a product? Do you want to re-design your
+                company’s website? Maybe you have a half-baked idea that’s not
+                yet fully shaped, whatever it is, we can give you a hand.
               </p>
               <Link to="/" className="btn btn--purple text-uppercase">
-                Contact Now
+                Lets Talk
               </Link>
             </div>
           </section>

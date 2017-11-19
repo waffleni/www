@@ -15,6 +15,7 @@ export default class SiteNavi extends React.Component {
         <Link className="navbar-brand" to="/">
           {title}
         </Link>
+        {/*
         <button
           className="navbar-toggler border-0"
           type="button"
@@ -31,6 +32,7 @@ export default class SiteNavi extends React.Component {
             <NavLink location={location} title="Link 1" linkTo="/somewhere" />
           </ul>
         </div>
+        */}
       </nav>
     )
   }
