@@ -1,9 +1,9 @@
 import React from 'react'
 
 export default () => (
-  <footer className="footer bg-alabaster pt-5">
-    <div className="container container-fluid py-5">
-      <div className="row mb-5">
+  <footer className="footer bg-alabaster">
+    <div className="container container-fluid">
+      {/*<div className="row mb-5">
         <div className="col-12 col-md-4">
           <h5 className="text-uppercase mb-4">Waffle Studio</h5>
           <p className="text-muted">
@@ -55,7 +55,7 @@ export default () => (
             </li>
           </ul>
         </div>
-      </div>
+      </div>*/}
       <div className="text-center">
         <span className="text-muted">© 2017 Waffle Studio</span>
       </div>

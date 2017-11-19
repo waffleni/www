@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "author": "Waffle Studio",
   "dependencies": {
-    "ganalytics": "^2.0.1",
     "gatsby": "^1.9.36",
     "gatsby-link": "^1.6.16",
     "gatsby-plugin-google-analytics": "^1.0.7",
