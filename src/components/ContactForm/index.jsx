@@ -39,16 +39,19 @@ export default class ContactForm extends React.Component {
           Next
         </button>
         <ForIdea
+          formValues={this.state}
           onChangeAction={this.handleChange}
           selectedForm={this.state.selectedForm}
           showForm={this.state.showStep}
         />
         <ForCoffee
+          formValues={this.state}
           onChangeAction={this.handleChange}
           selectedForm={this.state.selectedForm}
           showForm={this.state.showStep}
         />
         <ForWorld
+          formValues={this.state}
           onChangeAction={this.handleChange}
           selectedForm={this.state.selectedForm}
           showForm={this.state.showStep}
@@ -102,56 +105,68 @@ const MainForm = ({ onChangeAction }) => (
   </div>
 )
 
-const ForIdea = ({ onChangeAction, selectedForm, showForm }) => (
-  <div
-    className={`form-group ${selectedForm === 'forIdea' && showForm
-      ? null
-      : 'visually-hidden'}`}
-  >
-    <label>Email address</label>
-    <input
-      type="email"
-      className="form-control"
-      name="email"
-      placeholder="Enter email"
-      onChange={onChangeAction}
-    />
-  </div>
-)
+const ForIdea = ({ formValues, onChangeAction, selectedForm, showForm }) => {
+  const { email } = formValues
+  return (
+    <div
+      className={`form-group ${selectedForm === 'forIdea' && showForm
+        ? null
+        : 'visually-hidden'}`}
+    >
+      <label>Email address</label>
+      <input
+        type="email"
+        className="form-control"
+        name="email"
+        placeholder="Enter email"
+        value={email}
+        onChange={onChangeAction}
+      />
+    </div>
+  )
+}
 
-const ForCoffee = ({ onChangeAction, selectedForm, showForm }) => (
-  <div
-    className={`form-group ${selectedForm === 'forCoffee' && showForm
-      ? null
-      : 'visually-hidden'}`}
-  >
-    <label>User Name</label>
-    <input
-      type="text"
-      className="form-control"
-      name="user"
-      placeholder="Enter Name"
-      onChange={onChangeAction}
-    />
-  </div>
-)
+const ForCoffee = ({ formValues, onChangeAction, selectedForm, showForm }) => {
+  const { user } = formValues
+  return (
+    <div
+      className={`form-group ${selectedForm === 'forCoffee' && showForm
+        ? null
+        : 'visually-hidden'}`}
+    >
+      <label>User Name</label>
+      <input
+        type="text"
+        className="form-control"
+        name="user"
+        placeholder="Enter Name"
+        value={user}
+        onChange={onChangeAction}
+      />
+    </div>
+  )
+}
 
-const ForWorld = ({ onChangeAction, selectedForm, showForm }) => (
-  <div
-    className={`form-group ${selectedForm === 'forWorld' && showForm
-      ? null
-      : 'visually-hidden'}`}
-  >
-    <label>Place</label>
-    <input
-      type="text"
-      className="form-control"
-      name="place"
-      placeholder="Enter Place"
-      onChange={onChangeAction}
-    />
-  </div>
-)
+const ForWorld = ({ formValues, onChangeAction, selectedForm, showForm }) => {
+  const { place } = formValues
+  return (
+    <div
+      className={`form-group ${selectedForm === 'forWorld' && showForm
+        ? null
+        : 'visually-hidden'}`}
+    >
+      <label>Place</label>
+      <input
+        type="text"
+        className="form-control"
+        name="place"
+        placeholder="Enter Place"
+        value={place}
+        onChange={onChangeAction}
+      />
+    </div>
+  )
+}
 
 const encode = data => {
   return Object.keys(data)
