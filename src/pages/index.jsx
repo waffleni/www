@@ -59,8 +59,8 @@ const IndexPage = () => (
               />
               <h4>Plan</h4>
               <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur
-                et.
+                Transform your ideas into tangible requirements and a reachable
+                product.
               </p>
             </div>
             <div className="col-12 col-md-4">
@@ -72,8 +72,7 @@ const IndexPage = () => (
               />
               <h4>Design & Develop</h4>
               <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur
-                et.
+                Build your product using the last and best technology stack.
               </p>
             </div>
             <div className="col-12 col-md-4">
@@ -85,8 +84,8 @@ const IndexPage = () => (
               />
               <h4>Deploy</h4>
               <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur
-                et.
+                Use a robust and secure cloud for make your users feel like
+                home.
               </p>
             </div>
           </div>
@@ -114,7 +113,9 @@ const IndexPage = () => (
               <div className="pl-0 pl-md-5">
                 <h2 className="text-uppercase mb-3 mb-md-5">Portfolio</h2>
                 <p className="mb-3 mb-md-5">
-                  Aenean eu leo quam. Pellentesque ornare.
+                  We mix the beautiful with the usable. In our proven process we
+                  crystallize what's most important and help users find their
+                  way in your appealing product.
                 </p>
                 <Link
                   to="/"

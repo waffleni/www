@@ -3,8 +3,7 @@ import React from 'react'
 export default class ContactForm extends React.Component {
   state = {
     selectedForm: null,
-    formStep: null,
-    whyContact: '',
+    showStep: false,
     email: '',
     user: '',
     place: '',
@@ -26,37 +25,37 @@ export default class ContactForm extends React.Component {
 
   chooseForm = e => this.setState({ selectedForm: e.target.value })
 
-  renderForm = () => {
-    let formStep
-    console.log(this.state.selectedForm)
-    if (this.state.selectedForm === 'forIdea') {
-      formStep = <ForIdea onChangeAction={this.handleChange} />
-    } else if (this.state.selectedForm === 'forCoffee') {
-      formStep = <ForCoffee onChangeAction={this.handleChange} />
-    } else {
-      formStep = <ForWorld onChangeAction={this.handleChange} />
-    }
-    this.setState({ formStep })
-  }
+  showNextStep = () => this.setState({ showStep: !this.state.showStep })
 
   render() {
-    let formStep = this.state.formStep
     return (
       <form name="waffle-contact-form" onSubmit={this.handleSubmit}>
         <MainForm onChangeAction={this.chooseForm} />
         <button
-          onClick={this.renderForm}
+          onClick={this.showNextStep}
           type="button"
           className="btn btn--purple text-uppercase"
         >
           Next
         </button>
-        {formStep ? (
-          <div>
-            {formStep}
-            <button type="submit">Send</button>
-          </div>
-        ) : null}
+        <ForIdea
+          onChangeAction={this.handleChange}
+          selectedForm={this.state.selectedForm}
+          showForm={this.state.showStep}
+        />
+        <ForCoffee
+          onChangeAction={this.handleChange}
+          selectedForm={this.state.selectedForm}
+          showForm={this.state.showStep}
+        />
+        <ForWorld
+          onChangeAction={this.handleChange}
+          selectedForm={this.state.selectedForm}
+          showForm={this.state.showStep}
+        />
+        <div>
+          <button type="submit">Send</button>
+        </div>
       </form>
     )
   }
@@ -103,8 +102,12 @@ const MainForm = ({ onChangeAction }) => (
   </div>
 )
 
-const ForIdea = ({ onChangeAction }) => (
-  <div className="form-group">
+const ForIdea = ({ onChangeAction, selectedForm, showForm }) => (
+  <div
+    className={`form-group ${selectedForm === 'forIdea' && showForm
+      ? null
+      : 'visually-hidden'}`}
+  >
     <label>Email address</label>
     <input
       type="email"
@@ -116,8 +119,12 @@ const ForIdea = ({ onChangeAction }) => (
   </div>
 )
 
-const ForCoffee = ({ onChangeAction }) => (
-  <div className="form-group">
+const ForCoffee = ({ onChangeAction, selectedForm, showForm }) => (
+  <div
+    className={`form-group ${selectedForm === 'forCoffee' && showForm
+      ? null
+      : 'visually-hidden'}`}
+  >
     <label>User Name</label>
     <input
       type="text"
@@ -129,8 +136,12 @@ const ForCoffee = ({ onChangeAction }) => (
   </div>
 )
 
-const ForWorld = ({ onChangeAction }) => (
-  <div className="form-group">
+const ForWorld = ({ onChangeAction, selectedForm, showForm }) => (
+  <div
+    className={`form-group ${selectedForm === 'forWorld' && showForm
+      ? null
+      : 'visually-hidden'}`}
+  >
     <label>Place</label>
     <input
       type="text"
