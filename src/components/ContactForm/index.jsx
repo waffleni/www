@@ -10,6 +10,18 @@ export default class ContactForm extends React.Component {
     place: '',
   }
 
+  handleSubmit = e => {
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', ...this.state }),
+    })
+      .then(() => console.log('Success!'))
+      .catch(error => alert(error))
+
+    e.preventDefault()
+  }
+
   handleChange = e => this.setState({ [e.target.name]: e.target.value })
 
   chooseForm = e => this.setState({ selectedForm: e.target.value })
@@ -30,7 +42,7 @@ export default class ContactForm extends React.Component {
   render() {
     let formStep = this.state.formStep
     return (
-      <form name="waffle-contact-form" data-netlify="true">
+      <form name="waffle-contact-form" onSubmit={this.handleSubmit}>
         <MainForm onChangeAction={this.chooseForm} />
         <button
           onClick={this.renderForm}
@@ -129,3 +141,9 @@ const ForWorld = ({ onChangeAction }) => (
     />
   </div>
 )
+
+const encode = data => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
+}
