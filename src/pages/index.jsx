@@ -3,7 +3,6 @@ import React from 'react'
 import Link from 'gatsby-link'
 
 import SiteNavi from '../components/SiteNavi'
-import SiteCard from '../components/SiteCard'
 import SiteFooter from '../components/SiteFooter'
 
 const IndexPage = () => (
@@ -71,7 +70,7 @@ const IndexPage = () => (
                 height="85"
                 alt="design"
               />
-              <h4>Design</h4>
+              <h4>Design & Develop</h4>
               <p>
                 Praesent commodo cursus magna, vel scelerisque nisl consectetur
                 et.
@@ -137,7 +136,7 @@ const IndexPage = () => (
             fully shaped, whatever it is, we can give you a hand.
           </p>
           <Link to="/" className="btn btn--purple text-uppercase">
-            Lets Talk
+            Let's Talk
           </Link>
         </div>
       </section>
